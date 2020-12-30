@@ -15,12 +15,12 @@ module.exports = {
     resolve: {
         extensions: [".vue", ".js"],
     },
-    // optimization: {
-    //     splitChunks: {
-    //         // 提取所有公共模块
-    //         chunks: "all",
-    //     },
-    // },
+    optimization: {
+        splitChunks: {
+            // 提取所有公共模块
+            chunks: "all",
+        },
+    },
     module: {
         rules: [
             {
@@ -29,16 +29,21 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env"],
+                        presets: [
+                            // ['@babel/preset-env', { modules: 'commonjs' }]
+                            ['@babel/preset-env', { modules: 'auto' }]
+                          ]
+                        // presets: ["@babel/preset-env", { modules: 'auto' }],
                     },
                 },
             },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader',
-                enforce: 'pre'
-            },
+            // 需要执行代码检测的时候添加
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     loader: 'eslint-loader',
+            //     enforce: 'pre'
+            // },
             {
                 test: /\.vue?$/,
                 exclude: /node_modules/,

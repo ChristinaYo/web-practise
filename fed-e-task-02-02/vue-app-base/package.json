@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
+    "babel-eslint": "^10.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "consolidate": "^0.16.0",
     "copy-webpack-plugin": "^5.0.0",
@@ -63,6 +65,10 @@
     },
     "rules": {}
   },
+  "sideEffects": [
+    "./src/sideEffect",
+    "*.less"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",

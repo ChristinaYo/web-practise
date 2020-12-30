@@ -1,11 +1,10 @@
-
-const shaking = ()=> {
-  return 12345
+const test = function () {
+  return 2222
 }
-const aaa = ()=> {
-  return 2334
+const test3 = function () {
+  return 3333
 }
 export {
-  shaking,
-  aaa
+  test,
+  test3
 }

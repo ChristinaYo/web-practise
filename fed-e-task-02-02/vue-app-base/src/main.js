@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import { Button } from './sideEffect'
+// import {test} from './shaking';
 import './style.less'
-import {aaa} from './shaking'
-
+// console.log(test())
 Vue.config.productionTip = false
-console.log(aaa);
+document.body.appendChild(Button())
 new Vue({
-  render: h => h(App),
+  render: h => h(App)
 }).$mount('#app')

@@ -1,3 +1,4 @@
+    
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -7,9 +8,13 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 
 //生产环境配置
 module.exports = merge(common, {
+    mode: 'none',
     optimization: {
+        usedExports: true,
+        minimize: true,
+        sideEffects: true,
         minimizer: [
-            new TerserWebpackPlugin(), //js压缩处理
+            // new TerserWebpackPlugin(), //js压缩处理,为什么会出错呢
             new OptimizeCssAssetsWebpackPlugin() //样式文件压缩
         ],
         splitChunks: {

@@ -88,6 +88,7 @@ export default class VueRouter {
                 this.data.current = window.location.pathname;
             });
         } else {
+            //hash
             window.addEventListener("hashchange", () => {
                 this.data.current = location.hash.slice(1) || "/";
             });
